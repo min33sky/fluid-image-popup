@@ -38,24 +38,12 @@
   height: 100%;
   opacity: 0;
   pointer-events: none;
+  transition: all 0.2s ease-out;
 }
 
 .modal.open {
   opacity: 1;
   pointer-events: all;
-}
-
-.full-img {
-  position: absolute;
-  height: 70%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.5);
-  transition: all 0.25s ease-out;
-}
-
-.full-img.open {
-  transform: translate(-50%, -50%) scale(1);
 }
 
 .modal p {
@@ -65,4 +53,17 @@
   left: 50%;
   font-size: 2rem;
   transform: translate(-50%, -5%);
+}
+
+.full-img {
+  position: absolute;
+  height: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: all 0.25s ease-out;
+}
+
+.full-img.open {
+  transform: translate(-50%, -50%) scale(1);
 }
