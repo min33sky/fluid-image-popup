@@ -1,24 +1,25 @@
 const modal = document.querySelector('.modal');
 const previews = document.querySelectorAll('.gallary img');
-const original = document.querySelector('.full-img');
+const originalImg = document.querySelector('.full-img');
 const caption = document.querySelector('.caption');
 
+// 프리뷰 이미지들에 이벤트 등록
 previews.forEach((preview) => {
   preview.addEventListener('click', () => {
     modal.classList.add('open');
-    original.classList.add('open');
-    const originalSrc = preview.getAttribute('data-original');
-    original.src = `./full/${originalSrc}.jpg`;
-    caption.textContent = preview.alt;
+    originalImg.classList.add('open');
+    const originalSrc = preview.getAttribute('data-original'); // 원본 이미지 파일 이름
+    originalImg.src = `./full/${originalSrc}.jpg`; // 원본 이미지 주소
+    caption.textContent = preview.alt; // 이미지 설명
   });
 });
 
+// 모달 종료 이벤트
 modal.addEventListener('click', (e) => {
-  console.log(e.target.classList.contains('modal'));
   if (e.target.classList.contains('modal')) {
     modal.classList.remove('open');
-    original.classList.remove('open');
-    original.src = '';
+    originalImg.classList.remove('open');
+    originalImg.src = '';
     caption.textContent = '';
   }
 });
